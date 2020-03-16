@@ -1,0 +1,56 @@
+{
+    "name": "kreapptivo/message_label",
+    "type": "roundcube-plugin",
+    "description": "",
+    "keywords": ["mail","label","message"],
+    "homepage": "https://github.com/kreapptivo/message_label.git",
+    "license": "GPL-2.0",
+    "version": "1.0",
+    "authors": [
+        {
+            "name": "Denis Sobolev",
+            "email": "umout@users.noreply.github.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Stanislav Vyaliy",
+            "email": "wisekaa03@users.noreply.github.com",
+            "role": "Contributor"
+        },
+        {
+            "name": "taipeiwu",
+            "email": "taipeiwu@users.noreply.github.com",
+            "role": "Contributor"
+        },
+        {
+            "name": "Joe Bordes",
+            "email": "joebordes@users.noreply.github.com",
+            "role": "Contributor"
+        },
+        {
+            "name": "jkornobis",
+            "email": "jkornobis@users.noreply.github.com",
+            "role": "Contributor"
+        },
+        {
+            "name": "Christian Höltje",
+            "email": "docwhat@users.noreply.github.com",
+            "role": "Contributor"
+        },
+        {
+            "name": "Moritz Wacker",
+            "email": "wackerm@users.noreply.github.com",
+            "role": "Contributor"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://plugins.roundcube.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "roundcube/plugin-installer": ">=0.1.3"
+    }
+}
