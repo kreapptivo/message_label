@@ -1,7 +1,7 @@
 {
     "name": "kreapptivo/message_label",
     "type": "roundcube-plugin",
-    "description": "",
+    "description": "Message label plugin for roundcube",
     "keywords": ["mail","label","message"],
     "homepage": "https://github.com/kreapptivo/message_label.git",
     "license": "GPL-2.0",
