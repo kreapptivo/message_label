@@ -879,8 +879,8 @@ class message_label extends rcube_plugin {
             //$this->rc->imap_connect();
 	    $this->rc->storage_connect();
 
-            $args['blocks']['create_label'] = array('options' => array(), 'name' => Q($this->gettext('label_create')));
-            $args['blocks']['list_label'] = array('options' => array(), 'name' => Q($this->gettext('label_title')));
+            $args['blocks']['create_label'] = array('options' => array(), 'name' => rcube_utils::rep_specialchars_output($this->gettext('label_create')));
+            $args['blocks']['list_label'] = array('options' => array(), 'name' => rcube_utils::rep_specialchars_output($this->gettext('label_title')));
 
             $i = 0;
             $prefs = $this->rc->config->get('message_label', array());
@@ -908,8 +908,8 @@ class message_label extends rcube_plugin {
         $this->add_texts('localization');
 
         if (!$text)
-            $text = Q($this->gettext('label_name'));
-        //if (!$input) $input = Q($this->gettext('label_matches'));
+            $text = rcube_utils::rep_specialchars_output($this->gettext('label_name'));
+        //if (!$input) $input = rcube_utils::rep_specialchars_output($this->gettext('label_matches'));
         if (!$id)
             $id = uniqid();
         if (!$folder)
@@ -917,10 +917,10 @@ class message_label extends rcube_plugin {
 
         // header select box
         $header_select = new html_select(array('name' => '_label_header[]', 'class' => 'label_header'));
-        $header_select->add(Q($this->gettext('subject')), 'subject');
-        $header_select->add(Q($this->gettext('from')), 'from');
-        $header_select->add(Q($this->gettext('to')), 'to');
-        $header_select->add(Q($this->gettext('cc')), 'cc');
+        $header_select->add(rcube_utils::rep_specialchars_output($this->gettext('subject')), 'subject');
+        $header_select->add(rcube_utils::rep_specialchars_output($this->gettext('from')), 'from');
+        $header_select->add(rcube_utils::rep_specialchars_output($this->gettext('to')), 'to');
+        $header_select->add(rcube_utils::rep_specialchars_output($this->gettext('cc')), 'cc');
 
         // folder search select
         $folder_search = new html_select(array('name' => '_folder_search[]', 'class' => 'folder_search'));
@@ -933,11 +933,11 @@ class message_label extends rcube_plugin {
         $a_mailboxes = array();
 
         foreach ($a_folders as $folder_list)
-            rcmail_build_folder_tree($a_mailboxes, $folder_list, $delimiter);
+            rcmail::get_instance()->build_folder_tree($a_mailboxes, $folder_list, $delimiter);
 
-        $folder_search->add(Q($this->gettext('label_all')), 'all');
+        $folder_search->add(rcube_utils::rep_specialchars_output($this->gettext('label_all')), 'all');
 
-        rcmail_render_folder_tree_select($a_mailboxes, $mbox, $p['maxlength'], $folder_search, $p['realnames']);
+        rcmail::get_instance()->render_folder_tree_select($a_mailboxes, $mbox, $p['maxlength'], $folder_search, $p['realnames']);
 
         // input field
         $search_info_text = $this->gettext('search_info');
@@ -973,7 +973,7 @@ class message_label extends rcube_plugin {
     function preferences_section_list($args) {
         $args['list']['label_preferences'] = array(
             'id' => 'label_preferences',
-            'section' => Q($this->gettext('label_title'))
+            'section' => rcube_utils::rep_specialchars_output($this->gettext('label_title'))
         );
         return($args);
     }
