@@ -875,7 +875,10 @@ class message_label extends rcube_plugin {
         if ($args['section'] == 'label_preferences') {
 
             $this->rc = rcmail::get_instance();
-            $this->rc->imap_connect();
+            //DEPRECATED: imap_connect() replaced by storage_connect()
+            //$this->rc->imap_connect();
+            $this->rc->storage_connect();
+
 
             $args['blocks']['create_label'] = array('options' => array(), 'name' => Q($this->gettext('label_create')));
             $args['blocks']['list_label'] = array('options' => array(), 'name' => Q($this->gettext('label_title')));
