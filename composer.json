@@ -5,7 +5,7 @@
     "keywords": ["mail","label","message"],
     "homepage": "https://github.com/kreapptivo/message_label.git",
     "license": "GPL-2.0",
-    "version": "1.0",
+    "version": "1.4",
     "authors": [
         {
             "name": "Denis Sobolev",
